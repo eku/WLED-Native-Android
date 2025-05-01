@@ -39,6 +39,7 @@ import android.webkit.ValueCallback
 import android.webkit.WebChromeClient
 import android.webkit.WebResourceError
 import android.webkit.WebResourceRequest
+import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.Toast
@@ -222,9 +223,9 @@ fun DeviceWebView(
 
                         if (webViewViewModel.firstLoad) {
                             webViewViewModel.firstLoad = false
-
                             settings.javaScriptEnabled = true
                             settings.domStorageEnabled = true
+                            settings.cacheMode = WebSettings.LOAD_NO_CACHE
                         }
                     }
                     webView
